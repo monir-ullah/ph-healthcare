@@ -7,7 +7,6 @@ const pick = <T extends Record<string, unknown>, K extends keyof T>(
 
   for (const key of keys) {
     if (Object.keys(obj).length > 0 && obj.hasOwnProperty(key)) {
-      console.log(true);
       finalObject[key] = obj[key];
     }
   }
