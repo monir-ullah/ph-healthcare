@@ -6,7 +6,8 @@ const pick = <T extends Record<string, unknown>, K extends keyof T>(
   const finalObject: Partial<T> = {};
 
   for (const key of keys) {
-    if (obj && Object.hasOwnProperty.call(obj, key)) {
+    if (Object.keys(obj).length > 0 && obj.hasOwnProperty(key)) {
+      console.log(true);
       finalObject[key] = obj[key];
     }
   }

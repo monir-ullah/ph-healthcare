@@ -6,6 +6,7 @@ const getAllAdminFromDB = async (filters: any, options: any) => {
   const andCondition = [];
 
   if (searchTerm) {
+    // console.log(searchTerm);
     andCondition.push({
       OR: adminSearchAbleFields.map((item) => ({
         [item]: {
@@ -27,7 +28,7 @@ const getAllAdminFromDB = async (filters: any, options: any) => {
   }
 
   const whereCondition = andCondition.length > 0 ? { AND: andCondition } : {};
-  console.log(andCondition);
+  // console.log(andCondition);
 
   const dbResponse = await prisma.admin.findMany({
     where: whereCondition,
