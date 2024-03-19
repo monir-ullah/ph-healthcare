@@ -4,6 +4,6 @@ import { AdminController } from "./admin.controller";
 const router = express.Router();
 
 // Get all admin from the controller
-router.get("/admin", AdminController.getAllAdminController);
+router.get("/", AdminController.getAllAdminController);
 
 export const AdminRoutes = router;
